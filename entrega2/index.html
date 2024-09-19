@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La cava Gomez</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <script defer src="js/data.js"></script>
+  <script defer src="js/selectors.js"></script>
+  <script defer src="js/pag.js"></script>
+</head>
+
+<body>
+    <header id="main-header">
+        <picture><img src="./assets/logo.png" alt="Logo" /></picture>
+        <nav id="main-nav">
+            <a href="#">Home</a>
+            <a href="#">Delicias</a>
+            <a href="#">Mas de nosotros</a>
+            <a href="#">Contactanos</a>
+          </nav>
+        <form action="">
+            <button type="button" id="btn-menu">
+                <!-- aca imagen de botton -->
+            </button>
+            <button type="button" id="btn-menu">
+                <!-- aca imagen de carrito -->
+            </button>
+        </form>
+        <nav id="nav">
+          <a href="#">Home</a>
+          <a href="#">Delicias</a>
+          <a href="#">Mas de nosotros</a>
+          <a href="#">Contactanos</a>
+        </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <div class="home-info">
+            <h1>La Cava de Gómez: El arte del buen fiambre</h1>
+        </div>
+        <div class="home-pictures">
+            <div class="home-picture">
+                <img src="" alt="Jamon crudo" />
+                <h3>Sabor intenso, tradición en cada lonja.</h3>
+            </div>
+            <div class="home-picture">
+              <img src="" alt="Queso de cabra" />
+              <h3>Frescura y suavidad que conquistan paladares</h3>
+            </div>
+            <div class="home-picture">
+               <img src="" alt="Salame" />
+               <h3>El toque perfecto de sabor artesanal.</h3>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <h2>Nuestra Misión</h2>
+        <p>
+          En La Cava de Gómez, nos especializamos en llevar a tu mesa los mejores fiambres y embutidos artesanales, elaborados con tradición y pasión. Seleccionamos cada pieza con un compromiso inquebrantable hacia la calidad, ofreciendo productos que destacan por su sabor y frescura. Nuestra tienda online te acerca lo mejor de nuestra cava, para que disfrutes del verdadero placer gourmet en la comodidad de tu hogar. ¡Descubre la excelencia en cada bocado!
+        </p>
+      </section>
+      <section id="products">
+        <h2>Descubre la esencia gourmet en cada uno de nuestros productos.</h2>
+        <ul id="categories">
+          <li data-category="todas" class="active">🎨Todas</li>
+          <li data-category="futbol">⚽Futbol</li>
+          <li data-category="musica">🎷Música</li>
+          <li data-category="peliculas">🎬Películas</li>
+          <li data-category="autos">🏎️Autos</li>
+          <li data-category="politicos">💼Políticos</li>
+        </ul>
+        <!-- el ul este es donde van los products -->
+        <ul id="list"></ul>
+      </section>
+    </main>
+</body>
+
+</html>
