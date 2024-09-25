@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/main.css" />
   <script defer src="js/data.js"></script>
   <script defer src="js/selectors.js"></script>
-  <script defer src="js/pag.js"></script>
+  <script type="module" src="js/pag.js"></script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
               <a href="/contacto">CONTACTO</a>
           </div>
           <div class="nav_toggle" id="_toggle">
-              <span></span>
+              <span></span> 
               <span></span>
               <span></span>
           </div>
@@ -57,12 +57,9 @@
       <section id="products">
         <h2>Descubre la esencia gourmet en cada uno de nuestros productos.</h2>
         <ul id="categories">
-          <li data-category="todas" class="active">🎨Todas</li>
-          <li data-category="futbol">⚽Futbol</li>
-          <li data-category="musica">🎷Música</li>
-          <li data-category="peliculas">🎬Películas</li>
-          <li data-category="autos">🏎️Autos</li>
-          <li data-category="politicos">💼Políticos</li>
+          <button id="jamones">Jamones</button>
+          <button id="salames">Salames</button>
+          <button id="quesos">Quesos</button>
         </ul>
         <!-- el ul este es donde van los products -->
         <ul id="list"></ul>
