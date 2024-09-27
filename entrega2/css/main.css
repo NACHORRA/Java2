@@ -136,7 +136,15 @@ ul{
   display: grid;
   grid-template-rows: 70px 1fr 70px;
   transition: .5s;
+  overflow-y: auto;
 }
+
+.listProduct {
+  padding: 10px; /* Espacio interno del contenedor de productos */
+  overflow-y: auto; /* Activa scroll vertical si hay muchos productos */
+  max-height: calc(100vh - 140px); /* Altura máxima teniendo en cuenta los botones */
+}
+
 body.showCart .cartTab{
   right: 0;
 }
@@ -162,39 +170,97 @@ body.showCart .container{
 .cartTab .close{
   background-color: #eee;
 }
-.listCart .item img{
-  width: 100%;
-}
-.listCart .item{
-  display: grid;
-  grid-template-columns: 70px 150px 50px 1fr;
-  gap: 10px;
-  text-align: center;
-  align-items: center;
-}
 
-.listCart .quantity span{
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  background-color: #eee;
-  border-radius: 50%;
-  color: #555;
-  cursor: pointer;
-}
-.listCart .quantity span:nth-child(2){
-  background-color: transparent;
-  color: #eee;
-  cursor: auto;
-}
-.listCart .item:nth-child(even){
-  background-color: #eee1;
-}
-.listCart{
+.listCart {
   overflow: auto;
 }
-.listCart::-webkit-scrollbar{
-  width: 0;
+
+.listCart .item {
+  display: flex; /* Usar flexbox para la disposición */
+  align-items: center; /* Centrar verticalmente el contenido */
+  width: 100%; /* Ajusta al 100% del contenedor */
+  margin: 10px 0; /* Espaciado entre los productos */
+  background-color: #f4f4f4; /* Color de fondo */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para efecto visual */
+}
+
+.listCart .item img {
+  width: 100px; /* Ancho fijo para la imagen */
+  height: 100px; /* Altura fija para la imagen */
+  object-fit: cover; /* Recorta la imagen para mantener la proporción */
+  border-radius: 5px; /* Bordes redondeados para la imagen */
+  margin-right: 15px; /* Espacio entre la imagen y el texto */
+}
+
+.listCart .item h3 {
+  margin: 0; /* Sin margen por defecto */
+  font-size: 1.2rem; /* Tamaño de fuente para el nombre */
+}
+
+.listCart .item p {
+  margin: 5px 0; /* Margen entre el precio y el nombre */
+  font-size: 1rem; /* Tamaño de fuente para el precio */
+}
+
+.listCart .item button {
+  background-color: #1bcb7f; /* Color del botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  margin-top: auto; /* Empuja el botón al fondo del contenedor */
+}
+
+.listCart .item button:hover {
+  background-color: #17a366; /* Cambio de color al pasar el mouse */
+}
+
+.listCart::-webkit-scrollbar {
+  width: 0; /* Oculta la barra de desplazamiento */
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* O el ancho deseado */
+  height: 100px; /* O el alto deseado */
+  padding: 10px;
+  border: 1px solid #ccc; /* O el estilo de borde que prefieras */
+  margin-bottom: 10px; /* Espaciado entre tarjetas */
+}
+
+.card img {
+  height: 100%; /* Asegura que la imagen ocupe el 100% de la altura del contenedor */
+  width: 100px;
+  object-fit: cover; 
+}
+
+.card .details {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px; /* Espacio entre la imagen y los detalles */
+}
+
+.card .details h3 {
+  margin: 0; /* Elimina el margen del título */
+}
+
+.card .details p {
+  margin: 0; /* Elimina el margen del precio */
+}
+
+.card .details button {
+  background-color: #1bcb7f; /* Color del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  padding: 5px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
 html{
