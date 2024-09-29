@@ -263,6 +263,46 @@ body.showCart .container{
   cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
+.listProduct .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100px;
+}
+
+/* Estilos para los botones de cantidad (span) */
+.listProduct .quantity span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover y click para los span */
+.listProduct .quantity span:hover {
+  background-color: #ddd;
+}
+
+.listProduct .quantity span:active {
+  background-color: #ccc;
+}
+
+.total-price {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  border-top: 1px solid #ccc;
+}
+
+
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
@@ -426,4 +466,48 @@ html{
   #categories button:hover {
     background-color: #17a366;
     cursor: pointer;
+  }
+
+
+  footer{
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    padding: 20px 0;
+    gap: 10px;
+  }
+  
+  footer nav{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    text-decoration: none;
+  }
+  
+  footer nav a{
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+  }
+  
+  footer nav a:hover {
+    color: #85888C;
+  }
+  
+  @media (max-width: 1200px) {
+    
+    footer nav a {
+      font-size: 2rem;
+    }
+   
+  }
+  
+  @media (max-width: 700px) {
+    footer nav a {
+      font-size: 1rem;
+    }
+   
   }
