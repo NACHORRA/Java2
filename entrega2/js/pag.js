@@ -1,4 +1,4 @@
-//uso las func de selectors para agarrar las cosas con esas id. ahora digamos las modifico con el java. Con body hago lo mismo pero conn document
+
 let cart=[];
 const body = document.body
 const _items = select('#_items')
@@ -11,6 +11,12 @@ const toggleMenu= () =>{
     _items.classList.toggle("open")
     _toggle.classList.toggle("close")
 }
+
+window.addEventListener('scroll', () => {
+  if (_items.classList.contains('open')) {
+      toggleMenu();
+  }
+});
 
 _toggle.addEventListener('click', toggleMenu)
 
@@ -31,7 +37,7 @@ const products =(filteredproducts) =>{
         <img src="${producto.cardimg}" alt="${producto.name}">
         <h3>${producto.name}</h3>
         <p>Precio: $${producto.precio}</p>
-        <button class="addCart">Añadir al carrito</button>
+        <button class="addCart"><p>Añadir al carrito</p></button>
       `;
         content.append(productcard) ;
         ;
@@ -131,7 +137,7 @@ const addCartToHTML = () => {
     cart.forEach(item => {
       totalQuantity += item.quantity;
       let newItem = document.createElement('div');
-      newItem.classList.add('card'); // Clase añadida para aplicar estilos
+      newItem.classList.add('card');
       newItem.dataset.id = item.product_id;
       let positionProduct = carta.findIndex(value => value.id == item.product_id);
       let info = carta[positionProduct];
@@ -189,11 +195,12 @@ const changeQuantityCart = (product_id, type) => {
         if (changeQuantity > 0) {
           cart[positionItemInCart].quantity = changeQuantity;
         } else {
-          cart.splice(positionItemInCart, 1); // Eliminar producto si la cantidad llega a 0
+          cart.splice(positionItemInCart, 1); 
         }
         break;
     }
   }
-  addCartToHTML(); // Volver a renderizar el carrito después de cambiar la cantidad
-  addCartToMemory(); // Actualizar el almacenamiento
+  addCartToHTML(); 
+  addCartToMemory(); 
 }
+
